@@ -10,4 +10,4 @@ ln -s import xwax-import
 
 ./configure --prefix /usr --enable-alsa --enable-jack
 make clean; make EXECDIR=.
-./xwax -a plughw:1,0 -g 800x430 --no-decor -l ~/Music
+./xwax --dummy -g 800x430 --no-decor -l ~/Music
