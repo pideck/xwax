@@ -1087,11 +1087,12 @@ static void draw_deck(SDL_Surface *surface, const struct rect *rect,
     else
         draw_deck_top(surface, &top, pl, t);
 
-    split(lower, from_bottom(FONT_SPACE, SPACER), &meters, &status);
+    /*split(lower, from_bottom(FONT_SPACE, SPACER), &meters, &status);
     if (meters.h < 64)
         meters = lower;
     else
-        draw_deck_status(surface, &status, deck);
+        draw_deck_status(surface, &status, deck);*/
+    meters = lower;
 
     draw_meters(surface, &meters, t, position, meter_scale);
 }
@@ -1679,11 +1680,12 @@ static int interface_main(void)
         /* Split the display into the various areas. If an area is too
          * small, abandon any actions to happen in that area. */
 
-        split(rworkspace, from_bottom(STATUS_HEIGHT, SPACER), &rtmp, &rstatus);
+        /*split(rworkspace, from_bottom(STATUS_HEIGHT, SPACER), &rtmp, &rstatus);
         if (rtmp.h < 128 || rtmp.w < 0) {
             rtmp = rworkspace;
             status_update = false;
-        }
+        }*/
+        rtmp = rworkspace;
 
         split(rtmp, from_top(PLAYER_HEIGHT, SPACER), &rplayers, &rlibrary);
         if (rlibrary.h < LIBRARY_MIN_HEIGHT || rlibrary.w < LIBRARY_MIN_WIDTH) {
@@ -1703,7 +1705,7 @@ static int interface_main(void)
             draw_library(surface, &rlibrary, &selector);
 
         if (status_update)
-            draw_status(surface, &rstatus);
+            //draw_status(surface, &rstatus);
 
         if (decks_update)
             draw_decks(surface, &rplayers, deck, ndeck, meter_scale);
