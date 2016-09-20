@@ -1,0 +1,3 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/xwax-$1\.tar\.gz/,uversionmangle=s/-beta/~beta/,dversionmangle=s/~dfsg.*// \
+  https://github.com/xwax/xwax/tags .*/v?(\d\S*)\.tar\.gz

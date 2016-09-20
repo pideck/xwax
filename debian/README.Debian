@@ -1,0 +1,16 @@
+xwax for Debian
+---------------
+
+This package differs from the upstream release in the following ways:
+
+*  The xwax-import and xwax-scan scripts are located in /usr/share/xwax/ to
+   conform with the Debian filesystem hierarchy.
+
+*  Security hardening options are enabled for the xwax binary. Please file a
+   bug at https://www.debian.org/Bugs/Reporting if you notice any performance
+   regression.
+
+Please consult the xwax wiki (http://wiki.xwax.org/) for further information
+on suggested hardware configuration.
+
+ -- Daniel James <daniel@64studio.com>  Wed, 24 Aug 2016 10:54:16 +0100

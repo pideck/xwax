@@ -1,0 +1,171 @@
+xwax (1.6-1) unstable; urgency=medium
+
+  * New upstream release
+  * Remove patch that was merged upstream in 1.6 final release
+  * Font package name has changed, avoid pulling in transitional package
+  * Bump debhelper compatibility version
+  * Use https for Vcs fields in control file
+  * Update Debian readme with current script name and wiki link
+  * Enable all security hardening options
+  * Enable parallel build
+  * Update copyright notice
+  * Improve format of watch file to sort betas correctly
+  * Add myself to the list of uploaders
+
+ -- Daniel James <daniel@64studio.com>  Wed, 31 Aug 2016 15:37:31 +0100
+
+xwax (1.6~beta1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Support both avconf and ffmpeg binaries. (Closes: #722487)
+  * Refresh debian/copyright.
+  * Bump Standards
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 10 Jun 2015 12:56:04 +0100
+
+xwax (1.5-1) unstable; urgency=low
+
+  * New upstream release:
+    - Scan the music library in the background on startup
+    - Function to re-scan a crate
+    - Performance improovement to audio resampler
+    - Additional font paths
+    - Minor bug fixes
+  * Bump Standards.
+  * Add myself to copyright holders for the packaging.
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 10 Apr 2014 15:19:23 +0100
+
+xwax (1.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Alessio Treglia <alessio@debian.org>  Sun, 30 Jun 2013 03:42:07 +0100
+
+xwax (1.3-1) unstable; urgency=low
+
+  [ Mitchell Smith ]
+  * New upstream release. (Closes: #637207)
+  * Moved to Debian Multimedia Maintainers team.
+  * debian/patches/01-fix-libexec-dir-in-makefile.patch: dropped.
+  * debian/patches/02-remove-redundant-copyright-notice.patch: dropped,
+    override dh_install instead.
+  * debian/control:
+    - use [linux-any]. (Closes: #634480)
+    - bump Standards-Version to 3.9.2.
+    - bump debhelper Build-Depends to 7.0.50~.
+    - Changed maintainer to Debian Multimedia Maintainers.
+  * debian/rules:
+    - port to dh7.
+    - install upstream changelog.
+    - set EXECDIR.
+    - move clean bits to debian/clean.
+  * debian/copyright: use DEP 5.
+
+  [ Alessio Treglia ]
+  * Add Mitchell and myself to the Uploaders field.
+  * Enable JACk support.
+  * Enable hardened flags.
+  * Refresh debian/copyright, port it to Copyright format 1.0.
+  * Add Vcs tags.
+  * Bump Standards.
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Thu, 17 Jan 2013 10:17:03 +1000
+
+xwax (0.9-2) unstable; urgency=low
+
+  * Removed quilt related stuff from debian/rules
+  * Updated copyright notice
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Sat, 23 Apr 2011 04:30:14 +1000
+
+xwax (0.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated package dependencies for import script
+  * manpage patch no longer required
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Tue, 19 Apr 2011 16:29:05 +1000
+
+xwax (0.8-3) unstable; urgency=low
+
+  * Include patch to stop installation of redundant copyright notice
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Thu, 20 Jan 2011 09:12:02 +1100
+
+xwax (0.8-2) unstable; urgency=low
+
+  * Include patch to set EXECDIR correctly in Makefile
+
+ -- Mitchell Smith <mjs@kryptonite.mjsprojects.net>  Thu, 20 Jan 2011 08:38:20 +1100
+
+xwax (0.8-1) unstable; urgency=low
+
+  * New upstream release (Closes: #603011)
+  * Included manpage patch from Daniel Holbach
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Updated standards version to 3.9.1
+  * Changed configure options to only use alsa on Linux (Closes: #597892)
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Tue, 18 Jan 2011 11:48:01 +1100
+
+xwax (0.7-5) unstable; urgency=low
+
+  * Added dependency on ttf-dejavu-extra which provides 
+    DejaVuSans-Oblique.ttf (Closes: #587569)
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Fri, 02 Jul 2010 12:08:00 +1000
+
+xwax (0.7-4) unstable; urgency=low
+
+  * Fixed kfreebsd build issue with help from Petr Salinger (Closes: #573809)
+  * Fixed problem with the way configure was being called as reported by upstream author
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Mon, 12 Apr 2010 10:08:52 +1000
+
+xwax (0.7-3) unstable; urgency=low
+
+  * Fixes to debian/rules (Closes: #573552)
+  * Cleaned up a couple of Lintian warnings
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Sun, 14 Mar 2010 07:15:30 +1000
+
+xwax (0.7-2) unstable; urgency=low
+
+  * Removed man page, now included in upstream release
+  * Verified build with binutils-gold (Closes: #556764)
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Mon, 08 Mar 2010 00:48:01 +0000
+
+xwax (0.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Mon, 01 Mar 2010 08:49:31 +1000
+
+xwax (0.6-3) unstable; urgency=low
+
+  * Correction of license details, should be GPL version 2 only
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Mon, 26 Oct 2009 10:40:27 +1000
+
+xwax (0.6-2) unstable; urgency=low
+
+  * Using mpg123 instead of mpg321
+  * Updated xwax version in man page
+  * Some cosmetic changes to debian/control file
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Fri, 23 Oct 2009 04:07:38 +0000
+
+xwax (0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Added README.debian file documenting changes from upstream source
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Sat, 12 Sep 2009 06:31:22 +0000
+
+xwax (0.5-1) unstable; urgency=low
+
+  * Initial release (Closes: #535031)
+
+ -- Mitchell Smith <mjs@mjsprojects.net>  Sun, 05 Jul 2009 21:57:19 +0000
