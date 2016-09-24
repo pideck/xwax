@@ -1704,8 +1704,8 @@ static int interface_main(void)
         if (library_update)
             draw_library(surface, &rlibrary, &selector);
 
-        if (status_update)
-            //draw_status(surface, &rstatus);
+        /*if (status_update)
+            draw_status(surface, &rstatus);*/
 
         if (decks_update)
             draw_decks(surface, &rplayers, deck, ndeck, meter_scale);
