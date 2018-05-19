@@ -18,6 +18,7 @@
  */
 
 #include <assert.h>
+#include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -203,7 +204,14 @@ int main(int argc, char *argv[])
 
     fprintf(stderr, "%s\n\n" NOTICE "\n\n", banner);
 
+    if (setlocale(LC_ALL, "") == NULL) {
+        fprintf(stderr, "Could not honour the local encoding\n");
+        return -1;
+    }
+
     if (thread_global_init() == -1)
+        return -1;
+    if (library_global_init() == -1)
         return -1;
 
     if (rig_init() == -1)
@@ -634,6 +642,7 @@ out_rt:
     library_clear(&library);
     rt_clear(&rt);
     rig_clear();
+    library_global_clear();
     thread_global_clear();
 
     if (rc == EXIT_SUCCESS)

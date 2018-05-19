@@ -28,10 +28,17 @@
 #define PLAYER_CHANNELS 2
 
 struct player {
+
+    int currentPitchSample;
+    int pitchSampleAmount;
+    double pitchSamples[160];
+
+
     double sample_dt;
 
     spin lock;
     struct track *track;
+    struct deck *deck;
 
     /* Current playback parameters */
 
@@ -50,7 +57,7 @@ struct player {
         recalibrate; /* re-sync offset at next opportunity */
 };
 
-void player_init(struct player *pl, unsigned int sample_rate,
+void player_init(struct player *pl, struct deck *deck, unsigned int sample_rate,
                  struct track *track, struct timecoder *timecoder);
 void player_clear(struct player *pl);
 
@@ -72,4 +79,5 @@ void player_recue(struct player *pl);
 
 void player_collect(struct player *pl, signed short *pcm, unsigned samples);
 
+double player_getAveragePitch(struct player *pl);
 #endif
