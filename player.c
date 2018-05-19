@@ -25,10 +25,6 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <SDL.h>
-#include <SDL_events.h>
-#include <SDL_ttf.h>
-
 #include "device.h"
 #include "player.h"
 #include "track.h"
