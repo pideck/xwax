@@ -226,7 +226,7 @@ void player_init(struct player *pl,struct deck *deck, unsigned int sample_rate,
     pl->currentPitchSample = 0;
     pl->pitchSampleAmount = 160;
     int i;
-    for(i = 0; i < pl->pitchSampleAmount; i++) 
+    for(i = 0; i < pl->pitchSampleAmount; i++)
         pl->pitchSamples[i] = -1.0;
 }
 
@@ -360,8 +360,6 @@ static int sync_to_timecode(struct player *pl)
     signed int timecode;
 
     timecode = timecoder_get_position(pl->timecoder, &when);
-
-    
 
     /* Instruct the caller to disconnect the timecoder if the needle
      * is outside the 'safe' zone of the record */
