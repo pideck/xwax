@@ -19,7 +19,10 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-multimedia/xwax.git
 Package: xwax
 Architecture: any
 Depends:
+ flac,
  fonts-dejavu-extra,
+ id3v2,
+ vorbis-tools,
  ${misc:Depends},
  ${shlibs:Depends}
 Recommends:
