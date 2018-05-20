@@ -138,6 +138,7 @@ mktimecode:	LDLIBS  += -lm
 install:
 		$(INSTALL) -D xwax $(DESTDIR)$(BINDIR)/xwax
 		$(INSTALL) -D scan $(DESTDIR)$(EXECDIR)/xwax-scan
+		$(INSTALL) -D bpm-scan $(DESTDIR)$(EXECDIR)/xwax-bpm-scan
 		$(INSTALL) -D import $(DESTDIR)$(EXECDIR)/xwax-import
 		$(INSTALL) -D -m 0644 xwax.1 $(DESTDIR)$(MANDIR)/man1/xwax.1
 		$(INSTALL) -D -m 0644 CHANGES $(DESTDIR)$(DOCDIR)/xwax/CHANGES
