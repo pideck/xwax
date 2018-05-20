@@ -1,14 +1,15 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: xwax
 Upstream-Contact: mark@xwax.org
 Source: http://xwax.org/releases/
 
 Files: *
-Copyright: 2016 Mark Hills <mark@xwax.org>
+Copyright: 2018 Mark Hills <mark@xwax.org>
 License: GPL-2+
 
 Files: debian/*
 Copyright:
+  2018 James Cowgill <jcowgill@debian.org>
   2016 Daniel James <daniel@64studio.com>
   2014-2015 Alessio Treglia <alessio@debian.org>
   2010-2011 Mitchell Smith

@@ -1,3 +1,4 @@
 .config
+.version
 test-*.d
 test-*.o

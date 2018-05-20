@@ -1,3 +1,37 @@
+xwax (1.7-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ James Cowgill ]
+  * New upstream release.
+
+  * debian/compat: Use debhelper 11.
+  * debian/control:
+    - Drop Recommends on libav-tools. (Closes: #895919)
+    - Update Homepage.
+    - Bump standards to 4.1.4.
+  * debian/copyright: Update copyright dates.
+  * debian/patches: Add patch to generate version correctly.
+  * debian/rules: Remove various cruft variable assignments.
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field
+  * d/control: Deprecating priority extra as per policy 4.0.1
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/changelog: Remove trailing whitespaces
+
+  [ Felipe Sateler ]
+  * Change maintainer address to debian-multimedia@lists.debian.org
+
+ -- James Cowgill <jcowgill@debian.org>  Fri, 20 Apr 2018 10:14:24 +0100
+
+xwax (1.6-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove myself from the Uploaders field.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 02 Nov 2016 22:02:58 +0000
+
 xwax (1.6-1) unstable; urgency=medium
 
   * New upstream release
@@ -111,7 +145,7 @@ xwax (0.8-1) unstable; urgency=low
 
 xwax (0.7-5) unstable; urgency=low
 
-  * Added dependency on ttf-dejavu-extra which provides 
+  * Added dependency on ttf-dejavu-extra which provides
     DejaVuSans-Oblique.ttf (Closes: #587569)
 
  -- Mitchell Smith <mjs@mjsprojects.net>  Fri, 02 Jul 2010 12:08:00 +1000
