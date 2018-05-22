@@ -160,9 +160,9 @@ static SDL_Color background_col = {0, 0, 0, 255},
     cursor_col = {192, 0, 0, 255},
     selected_col = {0, 48, 64, 255},
     detail_col = {128, 128, 128, 255},
-    needle_col = {255, 255, 255, 255},
-    artist_col = {16, 64, 0, 255},
-    bpm_col = {64, 16, 0, 255};
+    needle_col = {255, 255, 255, 255};
+    /*artist_col = {16, 64, 0, 255},*/
+    /*bpm_col = {64, 16, 0, 255};*/
 
 static unsigned short *spinner_angle, spinner_size;
 
@@ -651,7 +651,7 @@ static void draw_record(SDL_Surface *surface, const struct rect *rect,
                         struct deck *deck)
 {
     struct rect artist, title, left, right;
-    struct record *record = deck->record;
+    const struct record *record =deck->record;
 
     split(*rect, from_top(BIG_FONT_SPACE, 0), &artist, &title);
     draw_text_in_locale(surface, &artist, record->artist,
@@ -1039,7 +1039,7 @@ static void draw_deck_top(SDL_Surface *surface, const struct rect *rect,
  * information on the timecode
  */
 
-static void draw_deck_status(SDL_Surface *surface,
+/*static void draw_deck_status(SDL_Surface *surface,
                              const struct rect *rect,
                              const struct deck *deck)
 {
@@ -1067,7 +1067,7 @@ static void draw_deck_status(SDL_Surface *surface,
             deck_is_locked(deck) ? "LOCK  " : "");
 
     draw_text(surface, rect, buf, detail_font, detail_col, background_col);
-}
+}*/
 
 /*
  * Draw a single deck
@@ -1077,7 +1077,7 @@ static void draw_deck(SDL_Surface *surface, const struct rect *rect,
                       struct deck *deck, int meter_scale)
 {
     int position;
-    struct rect track, top, meters, status, rest, lower;
+    struct rect track, top, meters, rest, lower;
     struct player *pl;
     struct track *t;
 
@@ -1130,7 +1130,7 @@ static void draw_decks(SDL_Surface *surface, const struct rect *rect,
  * Draw the status bar
  */
 
-static void draw_status(SDL_Surface *sf, const struct rect *rect)
+/*static void draw_status(SDL_Surface *sf, const struct rect *rect)
 {
     SDL_Color fg, bg;
 
@@ -1146,7 +1146,7 @@ static void draw_status(SDL_Surface *sf, const struct rect *rect)
     }
 
     draw_text_in_locale(sf, rect, status(), detail_font, fg, bg);
-}
+}*/
 
 /*
  * Draw the search field which the user types into
@@ -1264,7 +1264,7 @@ static void draw_listbox(const struct listbox *lb, SDL_Surface *surface,
     draw_rect(surface, &remain, background_col);
 }
 
-static void draw_crate_row(const void *context,
+/*static void draw_crate_row(const void *context,
                            SDL_Surface *surface, const struct rect rect,
                            unsigned int entry, bool selected)
 {
@@ -1312,17 +1312,17 @@ static void draw_crate_row(const void *context,
     }
 
     draw_text_in_locale(surface, &left, crate->name, font, col, selected_col);
-}
+}*/
 
 /*
  * Draw a crate index, with scrollbar and current selection
  */
 
-static void draw_crates(SDL_Surface *surface, const struct rect rect,
+/*static void draw_crates(SDL_Surface *surface, const struct rect rect,
                         const struct selector *x)
 {
     draw_listbox(&x->crates, surface, rect, x, draw_crate_row);
-}
+}*/
 
 static void draw_record_row(const void *context,
                             SDL_Surface *surface, const struct rect rect,
@@ -1378,7 +1378,7 @@ static void draw_index(SDL_Surface *surface, const struct rect rect,
 static void draw_library(SDL_Surface *surface, const struct rect *rect,
                          struct selector *sel)
 {
-    struct rect rsearch, rlists, rcrates, rrecords;
+    struct rect rsearch, rlists;
     unsigned int rows;
 
     split(*rect, from_top(SEARCH_HEIGHT, SPACER), &rsearch, &rlists);
