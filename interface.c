@@ -70,8 +70,8 @@
 
 /* Screen size (pixels) */
 
-#define DEFAULT_WIDTH 800
-#define DEFAULT_HEIGHT 430
+#define DEFAULT_WIDTH 630
+#define DEFAULT_HEIGHT 480
 
 /* Relationship between pixels and screen units */
 
@@ -100,7 +100,7 @@
 
 #define BPM_WIDTH 40
 #define SORT_WIDTH 21
-#define RESULTS_ARTIST_WIDTH 340
+#define RESULTS_ARTIST_WIDTH 315
 
 #define TOKEN_SPACE 2
 
