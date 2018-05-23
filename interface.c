@@ -49,8 +49,8 @@
 /* Font definitions */
 
 #define FONT "DejaVuSans-Bold.ttf"
-#define FONT_SIZE 12
-#define FONT_SPACE 15
+#define FONT_SIZE 14
+#define FONT_SPACE 20
 
 #define EM_FONT "DejaVuSans-Oblique.ttf"
 
@@ -66,12 +66,12 @@
 
 #define DETAIL_FONT "DejaVuSansMono.ttf"
 #define DETAIL_FONT_SIZE 12
-#define DETAIL_FONT_SPACE 15
+#define DETAIL_FONT_SPACE 20
 
 /* Screen size (pixels) */
 
-#define DEFAULT_WIDTH 960
-#define DEFAULT_HEIGHT 720
+#define DEFAULT_WIDTH 800
+#define DEFAULT_HEIGHT 430
 
 /* Relationship between pixels and screen units */
 
@@ -98,9 +98,9 @@
 #define SEARCH_HEIGHT (FONT_SPACE)
 #define STATUS_HEIGHT (DETAIL_FONT_SPACE)
 
-#define BPM_WIDTH 32
+#define BPM_WIDTH 40
 #define SORT_WIDTH 21
-#define RESULTS_ARTIST_WIDTH 200
+#define RESULTS_ARTIST_WIDTH 340
 
 #define TOKEN_SPACE 2
 
@@ -1906,7 +1906,7 @@ int interface_start(struct library *lib, const char *geo, bool decor)
 void interface_stop(void)
 {
     size_t n;
- 
+
     push_event(EVENT_QUIT);
 
     if (pthread_join(ph, NULL) != 0)
