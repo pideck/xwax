@@ -662,7 +662,7 @@ static void draw_record(SDL_Surface *surface, const struct rect *rect,
     if (show_bpm(record->bpm)) {
         split(title, from_left(BPM_WIDTH, 0), &left, &right);
 
-        // take note of pitch so we can calculate the avarage later on
+        // take note of pitch so we can calculate the average later on
         if (deck->player.currentPitchSample == deck->player.pitchSampleAmount)
             deck->player.currentPitchSample = 0;
         deck->player.pitchSamples[ deck->player.currentPitchSample ] = deck->player.pitch ;
