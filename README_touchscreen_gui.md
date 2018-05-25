@@ -14,12 +14,11 @@ make clean; make EXECDIR=.
 ### Build the source package
 
 In the xwax directory build a signed source package ignoring the .git directory,
-then go up to the parent directory to make an *orig.tar.gx and find the dsc file:
+then go up to the parent directory and find the dsc file:
 
 ```
 dpkg-buildpackage -i.git -S
 cd ..
-mv xwax_1.7-2~pideck.tar.gz xwax_1.7-2~pideck.orig.tar.gz
 ls xwax*dsc
 ```
 

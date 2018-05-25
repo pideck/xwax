@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Daniel James <daniel@64studio.com>
 Build-Depends:
- debhelper (>= 11),
+ debhelper (>= 10),
  libasound2-dev [linux-any],
  libjack-dev,
  libsdl-ttf2.0-dev
