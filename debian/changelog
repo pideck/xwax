@@ -1,3 +1,9 @@
+xwax (1.7-2~pideck) unstable; urgency=medium
+
+  * Modifications for PiDeck project
+
+ -- Daniel James <daniel@64studio.com>  Fri, 25 May 2018 14:37:51 +0100
+
 xwax (1.7-1) unstable; urgency=medium
 
   * Team upload.
