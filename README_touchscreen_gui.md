@@ -1,29 +1,31 @@
-#Building xwax for the PiDeck
+# Building xwax for the PiDeck
 
 This branch contains GUI modifications for running XWax on
 a small touchscreen (i.e. a 7" Tablet)
 
-##How to compile and test xwax GUI in a test system
+## How to compile and test xwax GUI in a test system
 
 ./configure --prefix /usr --enable-alsa --enable-jack
 make clean; make EXECDIR=.
 ./xwax -i scan -s bpm-scan --dummy -g 630x480 --no-decor -l ~/Music
 
-##How to build the Debian package
+## How to build the Debian package
 
-###Build the source package
+### Build the source package
 
-In the xwax directory build a signed source package, then go up to the parent directory to find the dsc file:
+In the xwax directory build a signed source package ignoring the .git directory,
+then go up to the parent directory to make an *orig.tar.gx and find the dsc file:
 
 ```
-dpkg-buildpackage -S
+dpkg-buildpackage -i.git -S
 cd ..
+mv xwax_1.7-2~pideck.tar.gz xwax_1.7-2~pideck.orig.tar.gz
 ls xwax*dsc
 ```
 
 You will be prompted for your passphrase.
 
-###Set up or update pbuilder
+### Set up or update pbuilder
 
 First, set up your pbuilder environment, which is a one-time operation per build machine...
 
@@ -47,10 +49,20 @@ If instead you see errors about the distro name not being found or 'no such scri
 
 Repeat for the other chroot environments.
 
-###Build the binary package
+### Build the binary package
 
 Set pbuilder working using the dsc file that you found earlier:
 
 `pbuilder-dist buster armhf build xwax_1.7-2~pideck.dsc`
 
-If all goes well, you will find your new package in ~/pbuilder/buster-armhf_result/
+If all goes well, you will find your new package in `~/pbuilder/buster-armhf_result/`
+
+If you get a segfault from pbuilder-satisfydepends, append this line to your ~/.pbuilderrc file:
+
+`PBUILDERSATISFYDEPENDSCMD=/usr/lib/pbuilder/pbuilder-satisfydepends-apt`
+
+You may see a lot of errors like this:
+
+`qemu: Unsupported syscall: 383`
+
+These are due to qemu being stricter about what is happening than in the past. If you ignore them, the build will continue eventually.
